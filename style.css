@@ -7,8 +7,13 @@
   --muted: #b3b3b3;
   --accent: #00ff66;
 }
+*::-webkit-scrollbar {
+  display: none;
+}
 *, *::before, *::after {
   box-sizing: border-box;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 html, body {
@@ -17,55 +22,49 @@ html, body {
   color: var(--fg);
   line-height: 1.2;
   font-family: "Ubuntu", sans-serif;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-html::-webkit-scrollbar, body::-webkit-scrollbar {
-  display: none;
 }
 
 .screen-warning {
   display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: auto;
+  z-index: 9999;
   background: #000000;
   color: #ff6b6b;
-  font-size: 14px;
-  padding: 20px;
-  z-index: 9999;
+  font-size: 11px;
+  overflow-y: auto;
+  padding: 20px 0px;
   text-align: center;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  overflow-y: auto;
 }
 .warning-content {
-  max-width: 90%;
   line-height: 1.4;
+  max-width: 95%;
 }
 .warning-title {
   color: #ff6b6b;
   font-weight: bold;
-  margin-bottom: 1rem;
-  font-size: 16px;
+  margin-bottom: 0.5rem;
+  font-size: 14px;
 }
 .warning-text {
   color: #f0f0f0;
-  margin: 0.3rem 0;
-  font-size: 14px;
+  margin: 0.2rem 0;
+  font-size: 11px;
 }
 .warning-command {
   color: #50fa7b;
   font-weight: bold;
 }
-@media (max-width: 299px) {
-  .container {
-    display: none;
-  }
+@media (max-width: 299px) and (min-width: 235px) {
   .screen-warning {
     display: flex;
+  }
+  html, body {
+    background-color: #000000;
   }
 }
 
@@ -103,6 +102,11 @@ p {
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
+}
+@media (max-width: 299px) {
+  .container {
+    display: none;
+  }
 }
 @media (max-width: 600px) {
   h1 {
@@ -147,5 +151,10 @@ p {
     font-size: 10px;
     flex-direction: column;
     gap: 3px;
+  }
+}
+@media (max-width: 299px) {
+  footer {
+    display: none;
   }
 }
