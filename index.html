@@ -1,255 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DeepOmni</title>
-  <link rel="icon" type="image/png" href="./asserts/png/favicon.png">
-  <style>
-    :root {
-      --bg: #0b0c0e;
-      --fg: #e6e6e6;
-      --muted: #b3b3b3;
-      --accent: #00ff66;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background-color: var(--bg);
-      color: var(--fg);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-                   "Liberation Mono", "Courier New", monospace;
-      line-height: 1.6;
-    }
-
-    .container {
-      max-width: 900px;
-      padding: 64px 32px 96px 32px;
-      margin: 0 auto;
-    }
-
-    h1 {
-      font-size: 32px;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
-
-    h2 {
-      font-size: 18px;
-      font-weight: 500;
-      color: var(--muted);
-      margin-top: 0;
-      margin-bottom: 32px;
-    }
-
-    p {
-      font-size: 16px;
-      margin-bottom: 22px;
-      text-align: justify;
-    }
-
-    .links {
-      margin-top: 48px;
-      font-size: 16px;
-    }
-
-    .links a {
-      color: var(--accent);
-      text-decoration: none;
-      margin-right: 18px;
-    }
-
-    .links a:hover {
-      text-decoration: underline;
-    }
-
-    .screen-warning {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #000000;
-      color: #ff6b6b;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-                   "Liberation Mono", "Courier New", monospace;
-      font-size: 14px;
-      padding: 20px;
-      z-index: 9999;
-      text-align: center;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    .warning-content {
-      max-width: 90%;
-      line-height: 1.6;
-    }
-
-    .warning-title {
-      color: #ff6b6b;
-      font-weight: bold;
-      margin-bottom: 1rem;
-      font-size: 16px;
-    }
-
-    .warning-text {
-      color: #f0f0f0;
-      margin: 0.5rem 0;
-      font-size: 14px;
-    }
-
-    .warning-command {
-      color: #50fa7b;
-      font-weight: bold;
-    }
-
-    @media (max-width: 700px) {
-      .container {
-        display: none;
-      }
-
-      .screen-warning {
-        display: flex;
-      }
-    }
-
-    @media (min-width: 701px) and (max-width: 768px) {
-      .container {
-        padding: 48px 24px 72px 24px;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      h2 {
-        font-size: 16px;
-      }
-
-      p {
-        font-size: 15px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 48px 24px 72px 24px;
-      }
-
-      h1 {
-        font-size: 26px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="screen-warning">
-    <div class="warning-content">
-      <div class="warning-title">>>> SCREEN SIZE ERROR</div>
-      <div class="warning-text">deepomni: /dev/display: Device too small</div>
-      <div class="warning-text">terminal: minimum viewport width required</div>
-      <div class="warning-text"></div>
-      <div class="warning-text">RECOMMENDED:</div>
-      <div class="warning-text"><span class="warning-command">xrandr --output DISPLAY --mode 1024x768</span></div>
-      <div class="warning-text">or rotate device to landscape mode</div>
-      <div class="warning-text"></div>
-      <div class="warning-text">current viewport: <span id="viewport-size">calculating...</span></div>
-      <div class="warning-text">required: ≥ 700px width</div>
-    </div>
-  </div>
-
-  <div class="container">
-    <h1>#DeepOmni</h1>
-    <h2>OSS for high performance deep learning and quantitative finance.</h2>
-
-    <p>High performance intelligence and computation are within reach.</p>
-
-    <p>
-      Building open, scalable, and high throughput systems for deep learning and
-      quantitative finance is one of the most important engineering challenges
-      today. Both domains demand extreme performance, low latency, and the
-      ability to process massive volumes of data reliably.
-    </p>
-
-    <p>
-      DeepOmni is an open source project focused on researching and engineering
-      the core infrastructure required to support modern AI workloads and
-      quantitative finance systems at scale.
-    </p>
-
-    <p>
-      Our goal is straightforward. Build robust, high performance infrastructure
-      for large scale model training, real time inference, backtesting,
-      simulation, and latency sensitive quantitative pipelines.
-    </p>
-
-    <p>
-      DeepOmni is not a loose collection of tools. It is a focused ecosystem built
-      for environments where performance directly impacts model quality,
-      strategy development, and decision making.
-    </p>
-
-    <p>
-      We treat research and engineering as a single continuous effort. Research
-      informs system design, while real world constraints from production AI and
-      financial systems shape what we build. Our work spans distributed systems,
-      numerical and statistical computing, parallel execution, runtime design,
-      scheduling, and hardware aware optimization.
-    </p>
-
-    <p>
-      For quantitative finance, this means fast data ingestion, efficient time
-      series processing, large scale simulations, and deterministic execution.
-      For deep learning, it means scalable training, efficient memory usage, and
-      high throughput compute across heterogeneous hardware.
-    </p>
-
-    <p>
-      We push for higher throughput and better scalability without compromising
-      correctness, reproducibility, or maintainability. These properties are
-      essential in both scientific research and financial systems.
-    </p>
-
-    <p>This allows teams to scale with confidence.</p>
-
-    <p>
-      DeepOmni is built in the open. Transparency, composability, and community
-      driven development are core principles. Our systems are designed to be
-      auditable, extensible, and suitable for both research and production use.
-    </p>
-
-    <p>
-      DeepOmni is for researchers, engineers, and practitioners working at the
-      intersection of deep learning, distributed systems, and quantitative
-      finance who care deeply about performance and rigor.
-    </p>
-
-    <p><strong>RESEARCH DRIVEN. ENGINEERING FIRST.</strong></p>
-
-    <div class="links">
-      <a href="https://codeberg.org/deepomni" target="_blank">Codeberg</a>
-      <a href="https://github.com/deepomni" target="_blank">GitHub</a>
-      <a href="mailto:deepomni.org@gmail.com">Email</a>
-    </div>
-  </div>
-
-  <script>
-    function updateViewportSize() {
-      const viewportElement = document.getElementById("viewport-size");
-      if (viewportElement) {
-        viewportElement.textContent = `${window.innerWidth}x${window.innerHeight}`;
-      }
-    }
-
-    window.addEventListener("resize", updateViewportSize);
-    window.addEventListener("load", updateViewportSize);
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepOmni</title>
+    <link href="./style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="./assets/png/favicon.png">
+  </head>
+  <body>
+    <section class="screen-warning">
+      <div class="warning-content">
+        <div class="warning-title">>>> SCREEN SIZE ERROR</div>
+        <div class="warning-text">deepomni: /dev/display: device too small.</div>
+        <div class="warning-text">terminal: minimum viewport width required.</div>
+        <div class="warning-text">RECOMMENDED:</div>
+        <div class="warning-text"><span class="warning-command">xrandr --output DISPLAY --mode 1024x768</span></div>
+        <div class="warning-text">or rotate device to landscape mode.</div>
+        <div class="warning-text">current viewport: <span id="viewport-size">calculating...</span></div>
+        <div class="warning-text">required: ≥ 700px width.</div>
+      </div>
+    </section>
+    <section class="container">
+      <h1>#DeepOmni</h1>
+      <h2>OSS for high performance deep learning and quantitative finance.</h2>
+      <p>
+        High performance intelligence and computation are within reach.
+      </p>
+      <p>
+        Building open, scalable, and high throughput systems for deep learning and
+        quantitative finance is one of the most important engineering challenges
+        today. Both domains demand extreme performance, low latency, and the
+        ability to process massive volumes of data reliably.
+      </p>
+      <p>
+        DeepOmni is an open source project focused on researching and engineering
+        the core infrastructure required to support modern AI workloads and
+        quantitative finance systems at scale.
+      </p>
+      <p>
+        Our goal is straightforward. Build robust, high performance infrastructure
+        for large scale model training, real time inference, backtesting,
+        simulation, and latency sensitive quantitative pipelines.
+      </p>
+      <p>
+        DeepOmni is not a loose collection of tools. It is a focused ecosystem built
+        for environments where performance directly impacts model quality,
+        strategy development, and decision making.
+      </p>
+      <p>
+        We treat research and engineering as a single continuous effort. Research
+        informs system design, while real world constraints from production AI and
+        financial systems shape what we build. Our work spans distributed systems,
+        numerical and statistical computing, parallel execution, runtime design,
+        scheduling, and hardware aware optimization.
+      </p>
+      <p>
+        For quantitative finance, this means fast data ingestion, efficient time
+        series processing, large scale simulations, and deterministic execution.
+        For deep learning, it means scalable training, efficient memory usage, and
+        high throughput compute across heterogeneous hardware.
+      </p>
+      <p>
+        We push for higher throughput and better scalability without compromising
+        correctness, reproducibility, or maintainability. These properties are
+        essential in both scientific research and financial systems.
+      </p>
+      <p>
+        This allows teams to scale with confidence.
+      </p>
+      <p>
+        DeepOmni is built in the open. Transparency, composability, and community
+        driven development are core principles. Our systems are designed to be
+        auditable, extensible, and suitable for both research and production use.
+      </p>
+      <p>
+        DeepOmni is for researchers, engineers, and practitioners working at the
+        intersection of deep learning, distributed systems, and quantitative
+        finance who care deeply about performance and rigor.
+      </p>
+      <p>
+        <strong class="quote">
+          <span>RESEARCH DRIVEN.</span>
+          <span>ENGINEERING FIRST.</span>
+        </strong>
+      </p>
+      <div class="links"></div>
+    </section>
+    <footer>
+      <div class="copyright">
+        <span>Copyright (c) 2025 DeepOmni.</span>
+        <span>All Rights Reserved.</span>
+      </div>
+    </footer>
+    <script type="module" src="./script.js"></script>
+  </body>
 </html>
