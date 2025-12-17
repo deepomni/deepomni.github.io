@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=BBH+Bartle&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
   --bg: #0b0c0e;
@@ -15,13 +16,13 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
-
 html, body {
   margin: 0;
   background-color: var(--bg);
   color: var(--fg);
   line-height: 1.2;
   font-family: "Ubuntu", sans-serif;
+  font-optical-sizing: auto;
 }
 
 .screen-warning {
@@ -73,13 +74,18 @@ html, body {
   padding: 64px 32px 96px 32px;
   margin: 0 auto;
 }
+.content {
+  margin: 50px 0px 75px 0px;
+}
 h1 {
   font-family: "Ubuntu", sans-serif;
+  font-optical-sizing: auto;
   font-size: 36px;
   margin-bottom: 8px;
 }
 h2 {
   font-family: "Ubuntu", sans-serif;
+  font-optical-sizing: auto;
   font-size: 18px;
   font-weight: 500;
   color: var(--muted);
@@ -125,6 +131,44 @@ p {
     align-items: flex-start;
     gap: 2px;
   }
+}
+
+.links {
+  margin: 24px 0px 48px 0px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  line-height: 1;
+}
+.links a {
+  color: var(--accent);
+  text-decoration: none;
+  padding: 25px 16px 25px 16px;
+  display: inline-flex;
+  align-items: center;
+}
+.link-items {
+  display: flex;
+  align-items: center;
+}
+.link-items:not(:last-child)::after {
+  content: "·";
+  color: rgba(255, 255, 255, 0.35);
+  margin: 0 14px;
+  font-weight: 400;
+}
+.links a:hover {
+  text-decoration: none;
+  color: #66ff99;
+
 }
 
 .copyright {
