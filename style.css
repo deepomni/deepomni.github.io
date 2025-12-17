@@ -89,7 +89,6 @@ h2 {
   font-optical-sizing: auto;
   font-size: 18px;
   font-weight: 500;
-  color: var(--muted);
   margin-top: 0;
   margin-bottom: 32px;
 }
@@ -150,7 +149,7 @@ p {
   line-height: 1;
 }
 .links a {
-  color: var(--accent);
+  color: #00ff66;
   text-decoration: none;
   padding: 25px 16px 25px 16px;
   display: inline-flex;
