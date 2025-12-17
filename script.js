@@ -5,5 +5,16 @@ const updateViewportSize = () => {
   }
 };
 
+const updateCopyrightYear = () => {
+  const yearElement = document.getElementById("copyright-year");
+  if (yearElement) {
+    const currentYear = new Date().getFullYear();
+    yearElement.textContent = currentYear;
+  }
+};
+
 window.addEventListener("resize", updateViewportSize);
-window.addEventListener("load", updateViewportSize);
+window.addEventListener("load", () => {
+  updateViewportSize();
+  updateCopyrightYear();
+});
