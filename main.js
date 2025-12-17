@@ -1,17 +1,15 @@
 const updateViewportSize = () => {
-  const viewportElement = document.getElementById("viewport-size");
-  if (viewportElement) {
-    viewportElement.textContent = `${window.innerWidth}x${window.innerHeight}`;
-  }
+  const el = document.getElementById("viewport-size");
+  if (!el) return;
+  el.textContent = `${window.innerWidth}x${window.innerHeight}`;
 };
 
 const updateCopyrightYear = () => {
-  const yearElement = document.getElementById("copyright-year");
-  if (yearElement) {
-    const currentYear = new Date().getFullYear();
-    yearElement.textContent = currentYear;
-  }
+  const el = document.getElementById("copyright-year");
+  if (!el) return;
+  el.textContent = new Date().getFullYear();
 };
+
 
 window.addEventListener("resize", updateViewportSize);
 window.addEventListener("load", () => {
