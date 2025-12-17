@@ -17,14 +17,10 @@ window.addEventListener("resize", updateViewportSize);
 window.addEventListener("load", () => {
   updateViewportSize();
   updateCopyrightYear();
-});
-
-setTimeout(() => {
   const loadingScreen = document.getElementById("loading-screen");
-  if (loadingScreen) {
+  if (!loadingScreen) return;
+  setTimeout(() => {
     loadingScreen.classList.add("hidden");
-    setTimeout(() => {
-      loadingScreen.style.display = "none";
-    }, 300);
-  }
-}, 800);
+    loadingScreen.remove();
+  }, 500);
+});
