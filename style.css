@@ -6,7 +6,7 @@
   --bg: #0b0c0e;
   --fg: #e6e6e6;
   --muted: #b3b3b3;
-  --accent: #00ff66;
+  --accent: #38b6ff;
 }
 *::-webkit-scrollbar {
   display: none;
@@ -82,6 +82,7 @@ h1 {
   font-optical-sizing: auto;
   font-size: 36px;
   margin-bottom: 8px;
+  color: var(--accent);
 }
 h2 {
   font-family: "Ubuntu", sans-serif;
