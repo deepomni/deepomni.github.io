@@ -170,6 +170,27 @@ p {
   color: #66ff99;
 
 }
+@media (max-width: 380px) {
+  .links {
+    flex-direction: column;
+    gap: 0;
+  }
+  .links a {
+    padding: 14px 0;
+  }
+  .link-items {
+    letter-spacing: 0.5px;
+  }
+  .link-items:not(:last-child)::after {
+    content: "";
+    margin: 0px;
+  }
+  .link-items:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    width: 100%;
+    justify-content: center;
+  }
+}
 
 .copyright {
   font-family: monospace;
